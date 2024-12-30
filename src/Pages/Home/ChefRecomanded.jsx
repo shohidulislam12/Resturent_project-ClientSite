@@ -48,7 +48,7 @@ fetch('public/menu.json')
   <figure className="px-10 pt-10">
     <img
       src={item.image}
-      alt="Shoes"
+      alt="food"
       className="rounded-xl" />
   </figure>
   <div className="card-body items-center text-center">
