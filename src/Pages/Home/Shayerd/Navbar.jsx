@@ -1,13 +1,36 @@
-import { NavLink } from "react-router-dom";
+import { useContext } from "react";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../../provider/AuthProvider";
 
 
 const Navbar = () => {
+  const {user,signOutuser}=useContext(AuthContext)
+  const naviagete=useNavigate()
+
+const handleLogOut=()=>{
+  signOutuser()
+  .then(()=>{
+console.log('logOutSuccess')
+naviagete('/')
+  })
+  .catch(err=>console.log(err))
+}
     const list=<>
     <li><NavLink to='/'>Home</NavLink></li>
     <li><NavLink to='/ourmenu'>Our Menu</NavLink></li>
     <li><NavLink to='/ourshop/salad'>Our Shop</NavLink></li>
     <li><NavLink to='/'>DASHBOARD</NavLink></li>
-    <li><NavLink to='/'>SIGN OUT</NavLink></li>
+    <li><NavLink to='/secret'>Secret</NavLink></li>
+
+{  !user?<>
+  <li><NavLink to='/signup'>SIGN UP</NavLink></li>
+  <li><NavLink to='/login'>Log In</NavLink></li>
+</>: <li>
+          <button onClick={handleLogOut} className="btn btn-ghost">
+            Log Out
+          </button>
+        </li>}
+ 
     </>
     return (
         <div className="navbar bg-opacity-30 bg-black text-white max-w-screen-xl mx-auto fixed z-10">
@@ -45,10 +68,18 @@ const Navbar = () => {
           list}
           </ul>
         </div>
-        <div className="navbar-end">
-          <a className="btn">Button</a>
-        </div>
+        <div className="dropdown dropdown-end">
+   { user && <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+      <div className="w-10 rounded-full text-black">
+        <img
+          alt="Tailwind CSS Navbar component"
+          src={user.photoURL} />
       </div>
+    </div>}
+
+    </div>
+  </div>
+     
     );
 };
 

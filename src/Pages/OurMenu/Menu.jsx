@@ -33,10 +33,10 @@ const offered=menu.filter(item=>item.category==='offered')
        <Manucatagori   subtitle={'Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.'} title={'pizza'} img={img2} items={pizza}>
 
        </Manucatagori>
-       <Manucatagori   subtitle={'Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.'} title={'salads'} img={img3} items={soup}>
+       <Manucatagori   subtitle={'Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.'} title={'salad'} img={img3} items={soup}>
 
        </Manucatagori>
-       <Manucatagori   subtitle={'Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.'} title={'soups'} img={img4} items={salad}>
+       <Manucatagori   subtitle={'Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.'} title={'soup'} img={img4} items={salad}>
 
        </Manucatagori>
     
