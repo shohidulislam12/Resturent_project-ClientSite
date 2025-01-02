@@ -45,6 +45,7 @@ useEffect(()=>{
       
          
         });
+        setLoading(false)
         return ()=>{
               
             return unsubscribe()
@@ -52,7 +53,7 @@ useEffect(()=>{
         
   },[])
     const authInf={
-       user,loading,setLoading,creatuserEmailPAss,signInEmailAndPass,signOutuser,googleLogin,updateinf
+        setUser,user,loading,setLoading,creatuserEmailPAss,signInEmailAndPass,signOutuser,googleLogin,updateinf
     }
     return (
         <AuthContext.Provider value={authInf}>

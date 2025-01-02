@@ -12,7 +12,7 @@ const Login = () => {
     const naviagete=useNavigate()
     const captaRef=useRef(null)
     const location=useLocation()
-    const from=location.state?.form?.pathname ||'/'
+    const from=location.state?.from?.pathname ||'/';
     const [disAble,setDisabe]=useState(true)
     useEffect(()=>{
  

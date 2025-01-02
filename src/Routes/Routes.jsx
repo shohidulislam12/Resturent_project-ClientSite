@@ -10,6 +10,8 @@ import Login from "../Pages/login/Login";
 import SignIn from "../Pages/login/SignIn";
 import PrivetRoute from "./PrivetRoute";
 import Secret from "../Pages/Home/Shayerd/Secret";
+import DAshBord from "../Layout/DAshBord";
+import Cart from "../Pages/dashbord/cart/Cart";
 
  export const router = createBrowserRouter([
     {
@@ -42,7 +44,19 @@ import Secret from "../Pages/Home/Shayerd/Secret";
             <Secret></Secret>
           </PrivetRoute>
       },
+       
 
       ]
     },
+    {
+      path:'/dashbord',
+      element: <DAshBord></DAshBord>,
+    children:[
+        {
+          path:'cart',
+        element:<Cart></Cart>
+        }
+      ]
+  },
+
   ]);
