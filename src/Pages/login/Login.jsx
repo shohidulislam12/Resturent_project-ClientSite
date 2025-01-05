@@ -7,6 +7,7 @@ import toast from 'react-hot-toast';
 import { AuthContext } from '../../provider/AuthProvider';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FaGoogle } from 'react-icons/fa';
+import SocialLogin from '../../Componets/social/SocialLogin';
 const Login = () => {
     const {user,googleLogin,signInEmailAndPass}=useContext(AuthContext)
     const naviagete=useNavigate()
@@ -49,18 +50,7 @@ const Login = () => {
             console.log(error.message)
           });
     }
-    const handlegoogle=()=>{
-        googleLogin()
-        .then((result) => {
-           console.log(result)
-           naviagete(from,{replace:true})
-           toast.success('Login Sucess')
-          }).catch((error) => {
-    console.log(err)
-    toast.error('Login Faild')
-          });
-        
-    }
+    
     return (
         <div 
         style={{ backgroundImage: `url(${imgbg})` }}
@@ -97,10 +87,11 @@ const Login = () => {
                 <p className='text-[#D1A054]'>New here?<Link  to='/signup' className='text-[#D1A054]'> Create a New Account</Link></p>
                 <p  className='text-[#D1A054]'>Or sign in with</p>
                 <div>
+                <SocialLogin></SocialLogin>
              
-                <button onClick={handlegoogle} className='p-2 btn   border-yellow-300 rounded-full' >    <FaGoogle className='btn-outline' /></button>
                 </div>
             </div>
+           
         </div>
     );
 };

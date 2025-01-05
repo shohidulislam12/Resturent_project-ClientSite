@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../provider/AuthProvider";
-import { FaCartPlus } from "react-icons/fa";
+import { FaCartPlus, FaEnvelope, FaVoicemail } from "react-icons/fa";
 import useCart from "../../../Hooks/useCart";
 
 
@@ -24,6 +24,7 @@ naviagete('/')
     <li><NavLink to='/ourmenu'>Our Menu</NavLink></li>
     <li><NavLink to='/ourshop/salad'>Our Shop</NavLink></li>
     <li><NavLink to='/dashbord'>DASHBOARD</NavLink></li>
+ 
     <li><NavLink to='/secret'>Secret</NavLink></li>
     <li> <NavLink to='/dashbord/cart'>
     
@@ -31,6 +32,7 @@ naviagete('/')
   <div className="badge badge-secondary">{cart.length}</div>
 
       </NavLink></li>
+      <li><NavLink to='dashbord/contact'><FaEnvelope/> Contact</NavLink></li>
 
 
  

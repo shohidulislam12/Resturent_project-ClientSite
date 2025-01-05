@@ -12,6 +12,12 @@ import PrivetRoute from "./PrivetRoute";
 import Secret from "../Pages/Home/Shayerd/Secret";
 import DAshBord from "../Layout/DAshBord";
 import Cart from "../Pages/dashbord/cart/Cart";
+import Contact from "../Pages/contact/Contact";
+import Alluser from "../Pages/dashbord/alluser/Alluser";
+import Booking from "../Pages/dashbord/booking/Booking";
+import ManageItem from "../Pages/dashbord/manage/ManageItem";
+import AdminHome from "../Pages/dashbord/admin/AdminHome";
+import AddItem from "../Pages/Additem/AddItem";
 
  export const router = createBrowserRouter([
     {
@@ -26,6 +32,7 @@ import Cart from "../Pages/dashbord/cart/Cart";
             path:'/ourmenu',
             element:<Menu></Menu>
         },
+     
         {
             path:'/ourshop/:category',
             element:<OurShop></OurShop>
@@ -50,12 +57,37 @@ import Cart from "../Pages/dashbord/cart/Cart";
     },
     {
       path:'/dashbord',
-      element: <DAshBord></DAshBord>,
+      element:<PrivetRoute> <DAshBord></DAshBord></PrivetRoute>,
     children:[
         {
           path:'cart',
         element:<Cart></Cart>
-        }
+        },
+        {
+          path:'contact',
+          element:<Contact></Contact>
+      },
+      // admin path
+        {
+          path:'users',
+          element:<Alluser></Alluser>
+      },
+        {
+          path:'booking',
+          element:<Booking></Booking>
+      },
+        {
+          path:'manageitem',
+          element:<ManageItem></ManageItem>
+      },
+        {
+          path:'additem',
+          element:<AddItem></AddItem>
+      },
+        {
+          path:'adminhome',
+          element:<AdminHome></AdminHome>
+      },
       ]
   },
 
