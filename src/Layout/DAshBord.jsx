@@ -24,7 +24,7 @@ const DAshBord = () => {
   return (
     <div className="flex">
         {/* sidebar  */}
-      <div className="w-64 min-h-screen bg-orange-300">
+      <div className="w-[25%] min-h-screen bg-orange-300">
        {
         isAdmin?<>
 
@@ -49,7 +49,7 @@ const DAshBord = () => {
         </ul>
         </>
        }
-        <div className="divider divider-neutral p-5"></div>
+        <div className="divider items-start divider-neutral p-5"></div>
         <li className="flex items-center justify-center gap-3 p-3 text-2xl"><FaHome /><NavLink to="/"> Home</NavLink> </li>
         <li className="flex items-center justify-center gap-3 p-3 text-2xl"><FaSearch /><NavLink to="/ourmenu">Menu</NavLink> </li>
         <li className="flex items-center justify-center gap-3 p-3 text-2xl"><FaEnvelope/><NavLink to="/dashbord/contact"> Contact</NavLink> </li>

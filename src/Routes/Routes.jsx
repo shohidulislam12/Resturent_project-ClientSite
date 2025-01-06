@@ -18,6 +18,8 @@ import Booking from "../Pages/dashbord/booking/Booking";
 import ManageItem from "../Pages/dashbord/manage/ManageItem";
 import AdminHome from "../Pages/dashbord/admin/AdminHome";
 import AddItem from "../Pages/Additem/AddItem";
+import Adminroute from "./Adminroute";
+import UpdateItem from "../Pages/dashbord/UpdateItem";
 
  export const router = createBrowserRouter([
     {
@@ -70,7 +72,7 @@ import AddItem from "../Pages/Additem/AddItem";
       // admin path
         {
           path:'users',
-          element:<Alluser></Alluser>
+          element:<Adminroute><Alluser></Alluser></Adminroute>
       },
         {
           path:'booking',
@@ -78,15 +80,20 @@ import AddItem from "../Pages/Additem/AddItem";
       },
         {
           path:'manageitem',
-          element:<ManageItem></ManageItem>
+          element:<Adminroute><ManageItem></ManageItem></Adminroute>
+      },
+        {
+          path:'updateitem/:id',
+          element:<Adminroute><UpdateItem></UpdateItem></Adminroute>,
+          loader:({params})=>fetch(`http://localhost:5000/menu/${params.id}`)
       },
         {
           path:'additem',
-          element:<AddItem></AddItem>
+          element:<Adminroute><AddItem></AddItem></Adminroute>
       },
         {
           path:'adminhome',
-          element:<AdminHome></AdminHome>
+          element:<Adminroute><AdminHome></AdminHome></Adminroute>
       },
       ]
   },

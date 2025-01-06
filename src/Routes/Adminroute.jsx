@@ -3,12 +3,12 @@ import useAdmin from "../Hooks/UseAdmin";
 import useAuth from "../Hooks/useAuth";
 
 
-const Adminroute = () => {
+const Adminroute = ({children}) => {
     const { isAdmin: data, isLoading, error }=useAdmin()
     const location=useLocation()
     const {user,loading}=useAuth()
      if(loading||isLoading) return <span className="loading loading-bars loading-lg"></span>
-    if(user&&isAdmin){
+    if(user&&data){
         return children
     }
     return <Navigate to='/login' state={{from:location} } replace></Navigate>
