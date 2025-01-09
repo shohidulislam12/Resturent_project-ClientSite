@@ -20,6 +20,8 @@ import AdminHome from "../Pages/dashbord/admin/AdminHome";
 import AddItem from "../Pages/Additem/AddItem";
 import Adminroute from "./Adminroute";
 import UpdateItem from "../Pages/dashbord/UpdateItem";
+import PAyment from "../Pages/dashbord/Payment/PAyment";
+import Paymentshistory from "../Pages/dashbord/Payment/Paymentshistory";
 
  export const router = createBrowserRouter([
     {
@@ -64,6 +66,16 @@ import UpdateItem from "../Pages/dashbord/UpdateItem";
         {
           path:'cart',
         element:<Cart></Cart>
+        },
+        {
+          path:'payment',
+          element:<PAyment></PAyment>
+
+        },
+        {
+          path:'paymentHistory',
+          element:<PrivetRoute><Paymentshistory></Paymentshistory></PrivetRoute>
+
         },
         {
           path:'contact',

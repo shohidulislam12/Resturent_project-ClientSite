@@ -12,6 +12,8 @@
   "dependencies": {
     "@bjranario/sweet-toast": "^0.0.4",
     "@smastrom/react-rating": "^1.5.0",
+    "@stripe/react-stripe-js": "^3.1.1",
+    "@stripe/stripe-js": "^5.5.0",
     "@tanstack/react-query": "^5.62.11",
     "@tanstack/react-query-devtools": "^5.62.15",
     "axios": "^1.7.9",

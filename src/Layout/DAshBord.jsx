@@ -45,6 +45,7 @@ const DAshBord = () => {
        
           <li className="flex items-center justify-center gap-3 p-3 text-2xl"><IoMdText /><NavLink to="/dashbord/review"> Add Review</NavLink> </li>
           <li className="flex items-center justify-center gap-3 p-3 text-2xl"><CiCircleList /><NavLink to="/dashbord/mybookings"> Bookings</NavLink> </li>
+          <li className="flex items-center justify-center gap-3 p-3 text-2xl"><CiCircleList /><NavLink to="/dashbord/paymentHistory"> payment history</NavLink> </li>
        
         </ul>
         </>
